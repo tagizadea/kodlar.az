@@ -78,7 +78,14 @@ olunur:
 
 ### Məqaləni göndərmək
 
-Məqalənizi göndərmək üçün aşağıdakı addımları izləyin:
+Məqaləni göndərməyin əsas yolu PR (Pull Request) yaratmaqdır. Əgər
+proqramlaşdırma ilə məşğul olursunuzsa, mütləq bu yolla göndərin. Əgər `git`
+texnologiyasından istifadə edə bilmirsinizsə (texniki maneələr və ya digər
+səbəblər), [Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)
+bölməsində öz məqalənizi paylaşa bilərsiniz; bu halda idarəçilər sizin adınıza
+PR yarada bilərlər.
+
+Məqalənizi PR kimi göndərmək üçün aşağıdakı addımları izləyin:
 
 - Repozitoriyanı "fork" edin.
 - Yeni bir "branch" yaradın.

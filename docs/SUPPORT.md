@@ -11,4 +11,4 @@ göz atmağınız faydalı ola bilər.
 
 Əgər daha spesifik və ya açıq müzakirəyə uyğun olmayan bir mövzu barədə yazmaq
 istəyirsinizsə, idarəçilərlə birbaşa e-poçt vasitəsilə əlaqə saxlaya bilərsiniz:
-(yaxında əlavə olunacaq).
+[contact@kodlar.az](mailto:contact@kodlar.az).
