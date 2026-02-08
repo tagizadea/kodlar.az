@@ -6,8 +6,6 @@ date: 2026-02-08
 categories: [Karyera]
 ---
 
-# Proqramlaşdırma Səyahətimdə İmtina Etdiyim 5 Vərdiş
-
 Proqramlaşdırma ilə uzun müddət məşğul olduqda bir şeyi görürsən: nə qədər çox bilsən də, bəzən ən real inkişaf məhz nəyi (və ya nələri) etməyi dayandıranda başlayır. Mən öz təcrübəmdə müxtəlif texnologiyalarla, fərqli komanda mühitlərində və ayrı-ayrı layihələrdə işləmişəm. Amma zamanla anladım ki, bunlardan da vacibi var: yanaşma və düşüncə tərzi.
 
 Bu yazını yazarkən əvvəlcə mövzunu texniki detallarla izah etmək istədim. Sonra fikrimi dəyişdim. Çünki burada bölüşəcəyim məqamlar, oxuyanların təcrübəsindən asılı olmayaraq, daha çox real iş həyatında uzun müddət mənə yol göstərən müşahidələrdir. Məqsədim konkret bir şey etməyi öyrətmək deyil; sadəcə öz təcrübəmdən çıxardığım nəticələri səmimi şəkildə paylaşmaqdır. 
