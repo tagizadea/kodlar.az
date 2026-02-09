@@ -1,11 +1,11 @@
 # kodlar.az
 
 **kodlar.az** — Azərbaycan dilində informatika, proqramlaşdırma və kompüter
-elmləri haqqında açıq və ictimai məzmun platformasıdır. Layihənin məqsədi
+elmləri haqqında açıq və ictimai resurs platformasıdır. Layihənin məqsədi
 texnoloji bilikləri daha əlçatan etmək, yerli icmanı gücləndirmək və paylaşım
 mədəniyyətini təşviq etməkdir.
 
-Bu repozitoriya saytın kodlarını və onun məzmununu hamıya əlçatan edir.
+Bu repozitoriya saytın kodlarını və onun kontentini hamıya əlçatan edir.
 
 ---
 
@@ -22,7 +22,7 @@ tutur:
 
 - **Resurslar**: Yol xəritələri, tədris planları və digər faydalı materiallar.
 
-- **Açıq kod yanaşması**: Bütün məzmun və saytın kodu açıqdır. İstənilən şəxs
+- **Açıq kod yanaşması**: Bütün kontent və saytın kodu açıqdır. İstənilən şəxs
   oxuya, öyrənə və töhfə verə bilər.
 
 Layihə kommersiya məqsədi daşımır və icma tərəfindən formalaşdırılır.
@@ -52,7 +52,7 @@ kodlar.az açıq kodlu layihədir və hər kəsin töhfələrinə açıqdır. T�
 müxtəlif şəkillərdə ola bilər:
 
 - **Məqalələr yazmaq**: Yeni mövzular üzrə məqalələr yazaraq biliklərinizi
-  paylaşa bilərsiniz. Bu mövzular texniki yaxud qeyri-texniki ola bilər: məzmun
+  paylaşa bilərsiniz. Bu mövzular texniki yaxud qeyri-texniki ola bilər: kontent
   Azərbaycan dilində olmalıdır və kodlar.az auditoriyası üçün maraq kəsb
   etməlidir.
 
@@ -66,7 +66,7 @@ müxtəlif şəkillərdə ola bilər:
   və ya yeni xüsusiyyətlər əlavə etmək üçün kod yazaraq layihəyə qatqı verə
   bilərsiniz.
 
-- **Rəy bildirmək**: Mövcud məzmun haqqında rəy verərək və ya yeni ideyalar
+- **Rəy bildirmək**: Mövcud kontent haqqında rəy verərək və ya yeni ideyalar
   təklif edərək layihənin inkişafına kömək edə bilərsiniz.
 
 Bunların hamısı haqqında daha detallı şəkildə [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -90,22 +90,22 @@ Layihə ilə bağlı suallarınız, təklifləriniz və ya digər əlaqə məsə
 
 ## Lisenziya
 
-### Məzmun lisenziyası
+### Kontent lisenziyası
 
-"Məzmun" dedikdə kodlar.az saytında yerləşən bütün yazılar, məqalələr,
+"Kontent" dedikdə kodlar.az saytında yerləşən bütün yazılar, məqalələr,
 söhbətlər, şəkillər və digər materiallar nəzərdə tutulur.
 
-Bu layihənin bütün məzmunu
+Bu layihənin bütün Kontenti
 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE-CONTENT)
-lisenziyası ilə qorunur. Məzmunu istifadə edərkən və paylaşarkən bu lisenziyanın
+lisenziyası ilə qorunur. Kontenti istifadə edərkən və paylaşarkən bu lisenziyanın
 şərtlərinə riayət etməyiniz xahiş olunur.
 
 CC BY-SA 4.0 lisenziyası sizə aşağıdakı hüquqları verir:
 
-- Paylaşmaq — Məzmunu istənilən mühitdə və formatda kopyalaya və yenidən paylaşa
+- Paylaşmaq — Kontenti istənilən mühitdə və formatda kopyalaya və yenidən paylaşa
   bilərsiniz.
 
-- Uyğunlaşdırmaq — Məzmunu dəyişdirə, inkişaf etdirə və üzərində yeni işlər
+- Uyğunlaşdırmaq — Kontenti dəyişdirə, inkişaf etdirə və üzərində yeni işlər
   yarada bilərsiniz (hətta, kommersiya məqsədilə).
 
 Lakin bu şərtlərə mütləq əməl etməlisiniz:
@@ -122,7 +122,7 @@ Lakin bu şərtlərə mütləq əməl etməlisiniz:
 ### Kod lisenziyası
 
 "Kod" dedikdə kodlar.az saytının proqram təminatı, skriptlər və digər
-proqramlaşdırma komponentləri nəzərdə tutulur. Məzmunlar bu kateqoriyaya daxil
+proqramlaşdırma komponentləri nəzərdə tutulur. Kontentlər bu kateqoriyaya daxil
 olmur.
 
 Layihənin kod bazası isə [MIT Lisenziyası](LICENSE_CODE) ilə qorunur. Bu sizə
