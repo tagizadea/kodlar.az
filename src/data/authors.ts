@@ -1,7 +1,5 @@
-import TOML from "@iarna/toml";
-import fs from "node:fs";
-import path from "node:path";
 import type { ImageMetadata } from "astro";
+import parsedData from "./authors.toml";
 
 // Import all author images
 const authorImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -24,7 +22,15 @@ export interface Author {
   links?: AuthorLinks;
 }
 
-let authorsCache: Record<string, Author> | null = null;
+type RawAuthorData = Record<
+  string,
+  {
+    name: string;
+    avatar: string;
+    bio: string;
+    links?: AuthorLinks;
+  }
+>;
 
 function normalizeGitHubLink(link: string): string {
   if (link.startsWith("http://") || link.startsWith("https://")) {
@@ -40,31 +46,15 @@ function normalizeLinkedInLink(link: string): string {
   return `https://linkedin.com/in/${link}`;
 }
 
-function loadAuthors(): Record<string, Author> {
-  if (authorsCache) {
-    return authorsCache;
-  }
+function buildAuthors(): Record<string, Author> {
+  const authors: Record<string, Author> = {};
 
-  const authorsPath = path.join(process.cwd(), "src/data/authors.toml");
-  const authorsContent = fs.readFileSync(authorsPath, "utf-8");
-  const parsedData = TOML.parse(authorsContent) as unknown as Record<
-    string,
-    {
-      name: string;
-      avatar: string;
-      bio: string;
-      links?: AuthorLinks;
-    }
-  >;
-
-  authorsCache = {};
-
-  for (const [id, authorData] of Object.entries(parsedData)) {
-    // Try to find the imported image
+  for (const [id, authorData] of Object.entries(
+    parsedData as unknown as RawAuthorData,
+  )) {
     const avatarPath = `../images/authors/${authorData.avatar}`;
     const avatarImage = authorImages[avatarPath]?.default;
 
-    // Normalize social links
     const normalizedLinks = authorData.links
       ? {
           ...authorData.links,
@@ -77,7 +67,7 @@ function loadAuthors(): Record<string, Author> {
         }
       : undefined;
 
-    authorsCache[id] = {
+    authors[id] = {
       id,
       ...authorData,
       avatar: avatarImage || authorData.avatar,
@@ -85,20 +75,19 @@ function loadAuthors(): Record<string, Author> {
     };
   }
 
-  return authorsCache;
+  return authors;
 }
 
+const authors = buildAuthors();
+
 export function getAuthor(id: string): Author | undefined {
-  const authors = loadAuthors();
   return authors[id];
 }
 
 export function getAllAuthors(): Author[] {
-  const authors = loadAuthors();
   return Object.values(authors);
 }
 
 export function getAuthorIds(): string[] {
-  const authors = loadAuthors();
   return Object.keys(authors);
 }

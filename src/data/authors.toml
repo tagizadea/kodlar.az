@@ -22,12 +22,12 @@ website = "https://barish.me"
 [abdulla-abdullazade]
 name = 'Abdulla Abdullazadə'
 bio = """
-Abdulla hazırda universitetə qəbul imtahanlarına hazırlaşır. 
-Onun akademik hədəfi Kompüter Mühəndisliyi ixtisası üzrə ali təhsil almaqdır. 
+Abdulla hazırda universitetə qəbul imtahanlarına hazırlaşır.
+Onun akademik hədəfi Kompüter Mühəndisliyi ixtisası üzrə ali təhsil almaqdır.
 
 Onun əsas tədqiqat və maraq sahələrinə kiber təhlükəsizlik, sistem arxitekturası,
-reverse engineering və açıq mənbəli (open-source) proqram təminatının inkişafı daxildir. 
-"N3XT L3V3L CTF" layihəsinin yaradıcısı olan Abdulla, eyni zamanda yerli icma 
+reverse engineering və açıq mənbəli (open-source) proqram təminatının inkişafı daxildir.
+"N3XT L3V3L CTF" layihəsinin yaradıcısı olan Abdulla, eyni zamanda yerli icma
 üçün "CanYouHack.org" platformasını və onun üçün müxtəlif open-source alətlər hazırlayır
 """
 avatar = "abdullaxows.png"
@@ -40,13 +40,13 @@ website = "https://abdullaxows.canyouhack.org"
 [murad-nurubayli]
 name = 'Murad Nurubəyli'
 bio = """
-Murad Nurubayli hazırda sənayedə proqramçı kimi fəaliyyət göstərir. 
-O, əsasən .NET texnologiyaları, bulud əsaslı sistemlər və miqyaslana bilən backend həlləri üzərində çalışır. 
+Murad Nurubayli hazırda sənayedə proqramçı kimi fəaliyyət göstərir.
+O, əsasən .NET texnologiyaları, bulud əsaslı sistemlər və miqyaslana bilən backend həlləri üzərində çalışır.
 Murad indiyədək ABŞ və Avropada yerləşən bir sıra beynəlxalq şirkətlərdə işləyib və yüksək yüklü sistemlərin modernləşdirilməsi,
 performans optimizasiyası və legacy həllərin yeni arxitekturalara köçürülməsi ilə məşğul olub.
 
-Murad hazırda ADA Universitetində İKT və Kompüter Elmləri üzrə bakalavr təhsili alır, 
-bundan öncə isə Orta Doğu Texniki Universitetində riyaziyyat üzrə təhsil alıb. 
+Murad hazırda ADA Universitetində İKT və Kompüter Elmləri üzrə bakalavr təhsili alır,
+bundan öncə isə Orta Doğu Texniki Universitetində riyaziyyat üzrə təhsil alıb.
 Onun maraq dairəsinə proqram təminatının dizaynı, təmiz arxitektura və müasir proqramlaşdırma yanaşmaları daxildir.
 """
 
@@ -58,7 +58,7 @@ linkedin = "muradnurubayli"
 name = 'Əli Tağızadə'
 bio = """
 - ADA Universitetində Kompüter Elmləri üzrə bakalavr təhsili alır.
-- Maraq dairələri: Programlaşdırma, Oyun Dizaynı, Əməliyyat Sistemləri, Build Tools, 
+- Maraq dairələri: Programlaşdırma, Oyun Dizaynı, Əməliyyat Sistemləri, Build Tools,
 Hardware/Software integration, Kompüter Qrafikaları
 """
 
