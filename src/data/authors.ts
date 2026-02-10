@@ -1,5 +1,5 @@
 import type { ImageMetadata } from "astro";
-import parsedData from "./authors.toml";
+import { getCollection, getEntry } from "astro:content";
 
 // Import all author images
 const authorImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -9,7 +9,6 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>(
 
 export interface AuthorLinks {
   github?: string;
-  twitter?: string;
   linkedin?: string;
   website?: string;
 }
@@ -20,17 +19,10 @@ export interface Author {
   avatar: string | ImageMetadata;
   bio: string;
   links?: AuthorLinks;
+  render: () => Promise<{ Content: AstroComponentFactory }>;
 }
 
-type RawAuthorData = Record<
-  string,
-  {
-    name: string;
-    avatar: string;
-    bio: string;
-    links?: AuthorLinks;
-  }
->;
+type AstroComponentFactory = import("astro/runtime/server/index.js").AstroComponentFactory;
 
 function normalizeGitHubLink(link: string): string {
   if (link.startsWith("http://") || link.startsWith("https://")) {
@@ -46,48 +38,50 @@ function normalizeLinkedInLink(link: string): string {
   return `https://linkedin.com/in/${link}`;
 }
 
-function buildAuthors(): Record<string, Author> {
-  const authors: Record<string, Author> = {};
-
-  for (const [id, authorData] of Object.entries(
-    parsedData as unknown as RawAuthorData,
-  )) {
-    const avatarPath = `../images/authors/${authorData.avatar}`;
-    const avatarImage = authorImages[avatarPath]?.default;
-
-    const normalizedLinks = authorData.links
-      ? {
-          ...authorData.links,
-          github: authorData.links.github
-            ? normalizeGitHubLink(authorData.links.github)
-            : undefined,
-          linkedin: authorData.links.linkedin
-            ? normalizeLinkedInLink(authorData.links.linkedin)
-            : undefined,
-        }
-      : undefined;
-
-    authors[id] = {
-      id,
-      ...authorData,
-      avatar: avatarImage || authorData.avatar,
-      links: normalizedLinks,
-    };
-  }
-
-  return authors;
+function resolveAvatar(avatar?: string): string | ImageMetadata {
+  if (!avatar) return "";
+  const avatarPath = `../images/authors/${avatar}`;
+  return authorImages[avatarPath]?.default || avatar;
 }
 
-const authors = buildAuthors();
-
-export function getAuthor(id: string): Author | undefined {
-  return authors[id];
+function normalizeLinks(links?: AuthorLinks): AuthorLinks | undefined {
+  if (!links) return undefined;
+  return {
+    ...links,
+    github: links.github ? normalizeGitHubLink(links.github) : undefined,
+    linkedin: links.linkedin
+      ? normalizeLinkedInLink(links.linkedin)
+      : undefined,
+  };
 }
 
-export function getAllAuthors(): Author[] {
-  return Object.values(authors);
+export async function getAuthor(id: string): Promise<Author | undefined> {
+  const entry = await getEntry("authors", id);
+  if (!entry) return undefined;
+
+  return {
+    id: entry.id,
+    name: entry.data.name,
+    avatar: resolveAvatar(entry.data.avatar),
+    bio: entry.body ?? "",
+    links: normalizeLinks(entry.data.links),
+    render: () => entry.render(),
+  };
 }
 
-export function getAuthorIds(): string[] {
-  return Object.keys(authors);
+export async function getAllAuthors(): Promise<Author[]> {
+  const entries = await getCollection("authors");
+  return entries.map((entry) => ({
+    id: entry.id,
+    name: entry.data.name,
+    avatar: resolveAvatar(entry.data.avatar),
+    bio: entry.body ?? "",
+    links: normalizeLinks(entry.data.links),
+    render: () => entry.render(),
+  }));
+}
+
+export async function getAuthorIds(): Promise<string[]> {
+  const entries = await getCollection("authors");
+  return entries.map((entry) => entry.id);
 }
