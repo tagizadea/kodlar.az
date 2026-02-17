@@ -10,6 +10,8 @@ const blogCollection = defineCollection({
       description: z.string(),
       image: z.string().optional(),
       categories: z.array(z.string()),
+      resource: z.boolean().optional(),
+      resource_audiences: z.array(z.string()).optional(),
     }),
 });
 
@@ -26,7 +28,24 @@ const podcastCollection = defineCollection({
     }),
 });
 
+const authorCollection = defineCollection({
+  type: "content",
+  schema: () =>
+    z.object({
+      name: z.string(),
+      avatar: z.string().optional(),
+      links: z
+        .object({
+          github: z.string().optional(),
+          linkedin: z.string().optional(),
+          website: z.string().optional(),
+        })
+        .optional(),
+    }),
+});
+
 export const collections = {
   blog: blogCollection,
   podcasts: podcastCollection,
+  authors: authorCollection,
 };
